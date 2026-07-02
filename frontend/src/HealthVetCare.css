@@ -1,0 +1,485 @@
+.vetCustomer_layout {
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  padding: 50px 20px;
+  background: linear-gradient(135deg, #f0f9ff, #dfffe6);
+  min-height: 100vh;
+  font-family: "Poppins", sans-serif;
+}
+
+.vetCustomer_content_area {
+  background: white;
+  border-radius: 20px;
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.08);
+  padding: 45px;
+  max-width: 700px;
+  width: 100%;
+  animation: fadeIn 0.5s ease-in-out;
+}
+
+.vetCustomer_title {
+  font-size: 2rem;
+  font-weight: 700;
+  color: #2d63a8;
+  text-align: center;
+  margin-bottom: 10px;
+}
+
+.vetCustomer_subtitle {
+  text-align: center;
+  color: #4f5f7b;
+  margin-bottom: 30px;
+  font-size: 1rem;
+}
+
+/* Form */
+.vetCustomer_form {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.vetCustomer_form_group label {
+  font-weight: 600;
+  color: #333;
+  margin-bottom: 6px;
+}
+
+.vetCustomer_form_group input,
+.vetCustomer_form_group select {
+  padding: 12px 14px;
+  border-radius: 12px;
+  border: 1.5px solid #cfd6e0;
+  outline: none;
+  transition: all 0.2s ease;
+  background: #f8fcff;
+}
+
+.vetCustomer_form_group input:focus,
+.vetCustomer_form_group select:focus {
+  border-color: #4b75ff;
+  box-shadow: 0 0 6px rgba(75, 117, 255, 0.3);
+  background: #ffffff;
+}
+
+.vetCustomer_row {
+  display: flex;
+  gap: 16px;
+}
+
+/* Payment Options */
+.vetCustomer_payment_options {
+  display: flex;
+  gap: 20px;
+  align-items: center;
+  margin-top: 5px;
+}
+
+.vetCustomer_payment_options label {
+  background: #eef5ff;
+  padding: 8px 14px;
+  border-radius: 10px;
+  cursor: pointer;
+  transition: 0.2s;
+}
+
+.vetCustomer_payment_options label:hover {
+  background: #d6edff;
+}
+
+/* Buttons */
+.vetCustomer_button {
+  background: linear-gradient(135deg, #4b75ff, #2f9e44);
+  color: white;
+  font-weight: 600;
+  padding: 14px;
+  border: none;
+  border-radius: 12px;
+  cursor: pointer;
+  font-size: 1rem;
+  transition: transform 0.2s, opacity 0.2s;
+}
+
+.vetCustomer_button:hover {
+  transform: scale(1.02);
+  opacity: 0.95;
+}
+
+/* Messages */
+.vetCustomer_message.error {
+  color: #e34f4f;
+  text-align: center;
+  font-weight: 500;
+}
+
+/* Payment popup overlay */
+.vetCustomer_popup_overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.65);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 9999;
+}
+
+.vetCustomer_popup_container {
+  background: #fff;
+  border-radius: 16px;
+  box-shadow: 0 5px 30px rgba(0, 0, 0, 0.25);
+  padding: 20px;
+  width: 90%;
+  max-width: 950px;
+  height: 90vh;
+  overflow-y: auto;
+  position: relative;
+  animation: slideUp 0.4s ease;
+}
+
+.vetCustomer_close_btn {
+  position: absolute;
+  top: 15px;
+  right: 20px;
+  border: none;
+  background: none;
+  font-size: 22px;
+  color: #444;
+  cursor: pointer;
+}
+
+.vetCustomer_confirm_btn {
+  background-color: #4b75ff;
+  color: #fff;
+  font-weight: 600;
+  border: none;
+  border-radius: 8px;
+  padding: 12px 24px;
+  cursor: pointer;
+  transition: background 0.3s ease;
+}
+
+.vetCustomer_confirm_btn:hover {
+  background-color: #2f58e0;
+}
+
+/* Success Modal */
+.vetCustomer_success_modal_overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.5);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 10000;
+}
+
+.vetCustomer_success_modal {
+  background: white;
+  border-radius: 18px;
+  padding: 40px 50px;
+  text-align: center;
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.2);
+  animation: popUp 0.4s ease-in-out;
+}
+
+.vetCustomer_success_modal h2 {
+  color: #2e7d32;
+  margin-bottom: 10px;
+}
+
+.vetCustomer_success_modal p {
+  color: #444;
+  margin-bottom: 25px;
+}
+
+.vetCustomer_success_btn {
+  background: #4caf50;
+  color: white;
+  border: none;
+  padding: 12px 28px;
+  border-radius: 10px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background 0.3s ease;
+}
+
+.vetCustomer_success_btn:hover {
+  background: #3d9140;
+}
+
+/* Animations */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(15px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes popUp {
+  from {
+    transform: scale(0.8);
+    opacity: 0;
+  }
+  to {
+    transform: scale(1);
+    opacity: 1;
+  }
+}
+
+@keyframes slideUp {
+  from {
+    transform: translateY(50px);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+/* Gentle paw background pattern */
+.vetCustomer_layout {
+  background: linear-gradient(135deg, #eefaff, #d8ffe9);
+  position: relative;
+  overflow: hidden;
+}
+
+.vetCustomer_layout::before {
+  content: "🐾 🐾 🐾";
+  position: absolute;
+  top: 10%;
+  left: 5%;
+  font-size: 2rem;
+  opacity: 0.07;
+  animation: floatPaws 8s linear infinite;
+}
+
+.vetCustomer_layout::after {
+  content: "🐾 🐾";
+  position: absolute;
+  bottom: 15%;
+  right: 10%;
+  font-size: 2rem;
+  opacity: 0.05;
+  animation: floatPawsReverse 10s linear infinite;
+}
+
+/* Floating animations */
+@keyframes floatPaws {
+  from {
+    transform: translateY(0);
+  }
+  to {
+    transform: translateY(-30px);
+  }
+}
+
+@keyframes floatPawsReverse {
+  from {
+    transform: translateY(0);
+  }
+  to {
+    transform: translateY(30px);
+  }
+}
+
+/* Icons */
+.vetCustomer_label_icon {
+  color: #4b75ff;
+  margin-right: 6px;
+}
+
+.vetCustomer_header_icon {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 8px;
+}
+
+.vetCustomer_icon {
+  font-size: 3rem;
+  color: #2f80ed;
+  animation: pulseIcon 3s infinite ease-in-out;
+}
+
+@keyframes pulseIcon {
+  0%,
+  100% {
+    transform: scale(1);
+    opacity: 1;
+  }
+  50% {
+    transform: scale(1.08);
+    opacity: 0.9;
+  }
+}
+
+
+/* --- My Appointments Table --- */
+.vetCustomer_myappointments {
+  margin-top: 60px;
+}
+
+.vetCustomer_table_title {
+  font-size: 1.5rem;
+  font-weight: 600;
+  color: #2d63a8;
+  margin-bottom: 15px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.vetCustomer_no_data {
+  color: #666;
+  font-style: italic;
+  text-align: center;
+  background: #f5f9ff;
+  padding: 15px;
+  border-radius: 10px;
+}
+
+.vetCustomer_table_wrapper {
+  overflow-x: auto;
+  border-radius: 12px;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.08);
+}
+
+.vetCustomer_table {
+  width: 100%;
+  border-collapse: collapse;
+  background: white;
+  border-radius: 10px;
+}
+
+.vetCustomer_table th,
+.vetCustomer_table td {
+  padding: 14px 18px;
+  text-align: left;
+}
+
+.vetCustomer_table th {
+  background: #4b75ff;
+  color: white;
+  font-weight: 600;
+  font-size: 0.95rem;
+}
+
+.vetCustomer_table tr:nth-child(even) {
+  background-color: #f7faff;
+}
+
+.vetCustomer_status {
+  font-weight: 600;
+  border-radius: 8px;
+  padding: 4px 10px;
+  font-size: 0.85rem;
+}
+
+.vetCustomer_status_pending {
+  color: #b08900;
+  background: #fff5cc;
+}
+
+.vetCustomer_status_assigned {
+  color: #155fa0;
+  background: #e4f1ff;
+}
+
+.vetCustomer_status_completed {
+  color: #107e3e;
+  background: #d4f9df;
+}
+
+
+/* ---------------- Appointment Modal Styling ---------------- */
+
+.vetCustomer_popup_container.scrollable {
+  max-height: 80vh;
+  overflow-y: auto;
+  background: #fff;
+  padding: 2rem;
+  border-radius: 20px;
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.2);
+}
+
+.vetCustomer_table_title {
+  font-size: 1.4rem;
+  font-weight: bold;
+  color: #3c5da8;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-bottom: 1.5rem;
+}
+
+/* Appointment card list */
+.vetCustomer_list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: grid;
+  gap: 1rem;
+}
+
+/* Each appointment item */
+.vetCustomer_appointment_card {
+  background: #f9fbff;
+  border: 1px solid #d6e0f5;
+  border-left: 6px solid #3c5da8;
+  border-radius: 16px;
+  padding: 1rem 1.2rem;
+  transition: all 0.2s ease-in-out;
+  box-shadow: 0 2px 5px rgba(60, 93, 168, 0.1);
+}
+
+.vetCustomer_appointment_card:hover {
+  background: #eef3ff;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 10px rgba(60, 93, 168, 0.15);
+}
+
+/* Appointment text details */
+.vetCustomer_appointment_card strong {
+  font-size: 1.1rem;
+  color: #2e4c94;
+}
+
+.vetCustomer_appointment_card span {
+  display: block;
+  color: #444;
+  font-size: 0.95rem;
+  margin-top: 4px;
+}
+
+/* Status and Payment tags */
+.vetCustomer_appointment_card b {
+  font-weight: 600;
+}
+
+.vetCustomer_status_tag {
+  display: inline-block;
+  padding: 3px 8px;
+  border-radius: 12px;
+  font-size: 0.8rem;
+  font-weight: 600;
+  margin-left: 5px;
+  color: #fff;
+}
+
+.vetCustomer_status_tag.pending {
+  background: #f6b93b;
+}
+
+.vetCustomer_status_tag.completed {
+  background: #38ada9;
+}
+
+.vetCustomer_status_tag.assigned {
+  background: #6c5ce7;
+}

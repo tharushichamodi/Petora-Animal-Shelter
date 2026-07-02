@@ -1,0 +1,12 @@
+// api/daycare_capacity_Api.js
+const express = require('express');
+const router = express.Router();
+const capacityController = require('./daycare_capacity_controller');
+
+// Get current daily capacity
+router.get('/', capacityController.getDailyCapacity);
+
+// Update daily capacity
+router.put('/', capacityController.updateDailyCapacity);
+
+module.exports = router;
